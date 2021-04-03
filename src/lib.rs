@@ -26,6 +26,18 @@ pub struct Universe {
 /// Public methods, exported to JavaScript
 #[wasm_bindgen]
 impl Universe {
+    pub fn width(&self) -> u32 {
+        self.width
+    }
+
+    pub fn height(&self) -> u32 {
+        self.width
+    }
+
+    pub fn cells(&self) -> *const Cell {
+        self.cells.as_ptr()
+    }
+
     pub fn tick(&mut self) {
         let mut next = self.cells.clone();
 
